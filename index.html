@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+overflow:hidden;
+background:linear-gradient(-45deg,#ff5f8f,#ff9eb5,#ffd1dc,#ffe8ef);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+.container{
+text-align:center;
+color:white;
+z-index:2;
+padding:20px;
+}
+
+h1{
+font-size:50px;
+animation:fade 2s ease;
+}
+
+p{
+font-size:22px;
+margin-top:20px;
+opacity:0;
+animation:show 3s forwards;
+animation-delay:2s;
+}
+
+button{
+margin-top:35px;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+font-size:20px;
+background:white;
+color:#ff4f81;
+cursor:pointer;
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+@keyframes show{
+to{opacity:1;}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.heart{
+position:absolute;
+color:#ff0055;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+opacity:0;
+}
+30%{
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+#message{
+font-size:25px;
+margin-top:25px;
+color:white;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h1>❤️ oii oii pendek ❤️</h1>
+
+<p>
+p woii pendekk kamuu sering kangen yaaa sama akuu.<br>
+jujur ajaadeh walaupun aku tau orang pendek susah buat jujur karna lebih tinggi gengsinya daripada badannya.<br>
+sebelumnya aku minta maaaf yaa belum bisa ngasih yang lebih dari tahun kemaren maaff yaa syang ya❤️.<br>
+btw klik lah duluu ituu wahai manusia pendek.
+</p>
+
+<button onclick="love()">dede klik ini ❤️</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+function createHeart(){
+
+const heart=document.createElement("div");
+heart.classList.add("heart");
+
+heart.innerHTML=["❤️","💖","💕","🌹","✨"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*40)+"px";
+
+heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+
+}
+
+setInterval(createHeart,180);
+
+function typeWriter(text,element,speed){
+
+let i=0;
+
+element.innerHTML="";
+
+function typing(){
+
+if(i<text.length){
+
+element.innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,speed);
+
+}
+
+}
+
+typing();
+
+}
+
+function love(){
+
+typeWriter(
+"maaff untuk semuanya yaa sayang yaa💕,maff aku sering jadi alesan dede sedih dede galau dede bt,dede maraah,maaff untuk semunyaa yaa sayang yaa💖,satu yang dede harus inget akuu abakal selalu saaaayang sama dede🌹 walaupun kita lagi brantem💖,dede sih pendek jadii lebih tinggi ego nya daripada badan nyaa. tapii akuu tetep sayang kok cintaaa💖,dede kan orang ter ngangenin walaupin ngeselin wleee💕. daaann Aku mungkin bukan orang yang sempurna, tapi satu hal yang pasti✨... Aku akan selalu berusaha menjadi alasan senyummu. ❤️ I Love You ❤️",
+document.getElementById("message"),
+45
+);
+
+}
+
+</script>
+
+</body>
+</html>
